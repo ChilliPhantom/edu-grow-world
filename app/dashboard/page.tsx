@@ -3,6 +3,36 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BookOpen, Download, Globe, Calendar, Clock, Filter } from "lucide-react"
 
+const weekDays = [
+  {
+    title: "Monday: Farm Animals",
+    activities: [
+      "Morning circle: Farm animal sounds",
+      "Art activity: Cotton wool sheep",
+      'Story time: "The Little Red Hen"',
+      "Outdoor play: Animal movement game",
+    ],
+  },
+  {
+    title: "Tuesday: Wild Animals",
+    activities: [
+      "Morning circle: Safari adventure",
+      "Art activity: Paper plate lions",
+      'Story time: "Giraffes Can\'t Dance"',
+      "Outdoor play: Jungle obstacle course",
+    ],
+  },
+  {
+    title: "Wednesday: Ocean Animals",
+    activities: [
+      "Morning circle: Under the sea songs",
+      "Art activity: Paper plate fish",
+      'Story time: "Rainbow Fish"',
+      "Sensory play: Ocean water table",
+    ],
+  },
+];
+
 export default function Dashboard() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -98,63 +128,26 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent className="p-4">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    <Card>
-                      <CardHeader className="p-4">
-                        <CardTitle className="text-base">Monday: Farm Animals</CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-4">
-                        <ul className="list-disc pl-4 text-sm space-y-1">
-                          <li>Morning circle: Farm animal sounds</li>
-                          <li>Art activity: Cotton wool sheep</li>
-                          <li>Story time: "The Little Red Hen"</li>
-                          <li>Outdoor play: Animal movement game</li>
-                        </ul>
-                      </CardContent>
-                      <CardFooter className="p-4 pt-0">
-                        <Button variant="outline" size="sm" className="w-full">
-                          <Download className="mr-2 h-4 w-4" />
-                          Download Materials
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                    <Card>
-                      <CardHeader className="p-4">
-                        <CardTitle className="text-base">Tuesday: Wild Animals</CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-4">
-                        <ul className="list-disc pl-4 text-sm space-y-1">
-                          <li>Morning circle: Safari adventure</li>
-                          <li>Art activity: Paper plate lions</li>
-                          <li>Story time: "Giraffes Can't Dance"</li>
-                          <li>Outdoor play: Jungle obstacle course</li>
-                        </ul>
-                      </CardContent>
-                      <CardFooter className="p-4 pt-0">
-                        <Button variant="outline" size="sm" className="w-full">
-                          <Download className="mr-2 h-4 w-4" />
-                          Download Materials
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                    <Card>
-                      <CardHeader className="p-4">
-                        <CardTitle className="text-base">Wednesday: Ocean Animals</CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-4">
-                        <ul className="list-disc pl-4 text-sm space-y-1">
-                          <li>Morning circle: Under the sea songs</li>
-                          <li>Art activity: Paper plate fish</li>
-                          <li>Story time: "Rainbow Fish"</li>
-                          <li>Sensory play: Ocean water table</li>
-                        </ul>
-                      </CardContent>
-                      <CardFooter className="p-4 pt-0">
-                        <Button variant="outline" size="sm" className="w-full">
-                          <Download className="mr-2 h-4 w-4" />
-                          Download Materials
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    {weekDays.map((day) => (
+                      <Card key={day.title}>
+                        <CardHeader className="p-4">
+                          <CardTitle className="text-base">{day.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="p-4">
+                          <ul className="list-disc pl-4 text-sm space-y-1">
+                            {day.activities.map((activity) => (
+                              <li key={activity}>{activity}</li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                        <CardFooter className="p-4 pt-0">
+                          <Button variant="outline" size="sm" className="w-full">
+                            <Download className="mr-2 h-4 w-4" />
+                            Download Materials
+                          </Button>
+                        </CardFooter>
+                      </Card>
+                    ))}
                   </div>
                 </CardContent>
                 <CardFooter className="p-4 border-t">
