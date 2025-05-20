@@ -116,15 +116,15 @@ export default function Home() {
         <nav className="container flex items-center justify-between py-4">
           <span className="text-2xl font-extrabold text-purple-600 tracking-tight">EDU GROW</span>
           <ul className="hidden md:flex gap-8 text-base font-medium text-gray-700">
-            <li><Link href="#">Home</Link></li>
-            <li><Link href="#">Features</Link></li>
-            <li><Link href="#">Pricing</Link></li>
-            <li><Link href="#">About Us</Link></li>
-            <li><Link href="#">Contact</Link></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
           <div className="flex gap-2">
-            <Button variant="outline" className="hidden md:inline-block">Log In</Button>
-            <Button className="bg-purple-600 hover:bg-purple-700">Register</Button>
+            <button className="border border-gray-300 px-4 py-2 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Log In</button>
+            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition">Register</button>
           </div>
         </nav>
       </header>
@@ -132,21 +132,31 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-purple-50 py-16">
         <div className="container mx-auto px-4">
+          {/* Badge */}
           <div className="mb-6">
             <span className="inline-block bg-purple-100 text-purple-700 px-4 py-1 rounded-lg text-sm font-medium">
               Early Childhood Development
             </span>
           </div>
+          {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
             Nurturing Young Minds Across The World
           </h1>
+          {/* Subheading */}
           <p className="text-xl text-gray-700 mb-8 max-w-2xl">
             Affordable, high-quality educational content for nursery schools in multiple languages including Afrikaans, English, and Tswana.
           </p>
+          {/* Buttons */}
           <div className="flex flex-wrap gap-4">
-            <Button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">Get Started</Button>
-            <Button variant="outline" className="px-6 py-3 rounded-lg font-semibold">View Dashboard</Button>
-            <Button variant="outline" className="px-6 py-3 rounded-lg font-semibold">Learn More</Button>
+            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+              Get Started
+            </button>
+            <button className="border border-gray-300 px-6 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">
+              View Dashboard
+            </button>
+            <button className="border border-gray-300 px-6 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">
+              Learn More
+            </button>
           </div>
         </div>
       </section>
