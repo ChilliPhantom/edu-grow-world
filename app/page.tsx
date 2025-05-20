@@ -110,37 +110,43 @@ const pricing = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-background">
+      {/* Navigation Bar */}
+      <header className="w-full bg-white shadow-sm">
+        <nav className="container flex items-center justify-between py-4">
+          <span className="text-2xl font-extrabold text-purple-600 tracking-tight">EDU GROW</span>
+          <ul className="hidden md:flex gap-8 text-base font-medium text-gray-700">
+            <li><Link href="#">Home</Link></li>
+            <li><Link href="#">Features</Link></li>
+            <li><Link href="#">Pricing</Link></li>
+            <li><Link href="#">About Us</Link></li>
+            <li><Link href="#">Contact</Link></li>
+          </ul>
+          <div className="flex gap-2">
+            <Button variant="outline" className="hidden md:inline-block">Log In</Button>
+            <Button className="bg-purple-600 hover:bg-purple-700">Register</Button>
+          </div>
+        </nav>
+      </header>
+
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-purple-50 to-white">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-purple-100 px-3 py-1 text-sm text-purple-700">
-                Early Childhood Development
-              </div>
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                Nurturing Young Minds Across The World
-              </h1>
-              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Affordable, high-quality educational content for nursery schools in multiple languages including
-                Afrikaans, English, and Tswana.
-              </p>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-purple-600 hover:bg-purple-700" aria-label="Get Started">Get Started</Button>
-                <Button variant="outline" aria-label="Learn More">Learn More</Button>
-              </div>
-            </div>
-            <div className="mx-auto lg:ml-auto">
-              <Image
-                alt="Children learning"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-                src="/your-real-image.jpg" // <-- Use a real image here
-                width={800}
-                height={550}
-                priority
-              />
-            </div>
+      <section className="bg-purple-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-6">
+            <span className="inline-block bg-purple-100 text-purple-700 px-4 py-1 rounded-lg text-sm font-medium">
+              Early Childhood Development
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+            Nurturing Young Minds Across The World
+          </h1>
+          <p className="text-xl text-gray-700 mb-8 max-w-2xl">
+            Affordable, high-quality educational content for nursery schools in multiple languages including Afrikaans, English, and Tswana.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">Get Started</Button>
+            <Button variant="outline" className="px-6 py-3 rounded-lg font-semibold">View Dashboard</Button>
+            <Button variant="outline" className="px-6 py-3 rounded-lg font-semibold">Learn More</Button>
           </div>
         </div>
       </section>

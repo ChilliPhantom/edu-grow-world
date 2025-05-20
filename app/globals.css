@@ -103,13 +103,13 @@
     outline-style: solid;
     outline-offset: 0;
   }
+  html {
+    font-family: var(--font-sans);
+  }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans);
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
-    background-color: #f7f9fb;
-    color: #222;
   }
 }
