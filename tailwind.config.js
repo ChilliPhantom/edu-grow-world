@@ -7,15 +7,25 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
+  safelist: [
+    // Add dynamic classes here to prevent purging
+    'bg-primary',
+    'text-secondary',
+  ],
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
+        sm: "600px",
+        md: "728px",
+        lg: "984px",
+        xl: "1240px",
         "2xl": "1400px",
       },
     },
     extend: {
+      // Custom color palette using CSS variables for easy theming
       colors: {
         border: "var(--color-border)",
         input: "var(--color-input)",
@@ -73,5 +83,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // require("@tailwindcss/forms"),
+    // require("@tailwindcss/typography"),
+  ],
 }
