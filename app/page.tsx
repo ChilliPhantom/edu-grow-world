@@ -1,7 +1,112 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Globe, Users, Calendar, Settings, Heart } from "lucide-react"
+
+// Reusable checkmark SVG component
+function CheckIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mr-2 h-4 w-4 text-green-500"
+    >
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  )
+}
+
+// Feature cards data
+const features = [
+  {
+    icon: Calendar,
+    title: "Weekly Content",
+    description: "Structured weekly themes and activities",
+    details: "Access new educational themes, tasks, and materials every week, carefully designed for early childhood development.",
+  },
+  {
+    icon: Globe,
+    title: "Multi-language",
+    description: "Content in multiple languages",
+    details: "All educational materials are available in multiple languages to support diverse linguistic needs across the world.",
+  },
+  {
+    icon: BookOpen,
+    title: "E-learning Tools",
+    description: "Modern teaching resources",
+    details: "Up-to-date e-learning tools and resources to enhance teaching methods and engage young learners effectively.",
+  },
+  {
+    icon: Users,
+    title: "School Management",
+    description: "Easy registration and access",
+    details: "Simple registration process for schools with dedicated dashboards for teachers and administrators.",
+  },
+  {
+    icon: Settings,
+    title: "Customizable",
+    description: "Adapt to your school's needs",
+    details: "Customize content based on cultural preferences, religious beliefs, and specific educational requirements.",
+  },
+  {
+    icon: Heart,
+    title: "Affordable",
+    description: "Quality education for all",
+    details: "Flexible subscription model designed to be accessible for all schools, including those in less fortunate areas.",
+  },
+]
+
+// Pricing cards data
+const pricing = [
+  {
+    title: "Basic",
+    description: "For small nursery schools",
+    price: "$29",
+    features: [
+      "Weekly educational content",
+      "2 language options",
+      "Basic e-learning tools",
+      "Up to 3 teacher accounts",
+    ],
+    highlight: false,
+  },
+  {
+    title: "Standard",
+    description: "For medium-sized nursery schools",
+    price: "$49",
+    features: [
+      "Weekly educational content",
+      "All language options",
+      "Advanced e-learning tools",
+      "Up to 10 teacher accounts",
+      "Cultural customization options",
+    ],
+    highlight: true,
+  },
+  {
+    title: "Premium",
+    description: "For larger nursery schools",
+    price: "$89",
+    features: [
+      "Weekly educational content",
+      "All language options",
+      "Premium e-learning tools",
+      "Unlimited teacher accounts",
+      "Full customization options",
+      "Priority support",
+    ],
+    highlight: false,
+  },
+]
 
 export default function Home() {
   return (
@@ -27,10 +132,13 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto lg:ml-auto">
-              <img
+              <Image
                 alt="Children learning"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-                src="/placeholder.svg?height=550&width=800"
+                src="/placeholder.svg"
+                width={800}
+                height={550}
+                priority
               />
             </div>
           </div>
@@ -49,95 +157,20 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Calendar className="h-8 w-8 text-purple-600" />
-                <div className="grid gap-1">
-                  <CardTitle>Weekly Content</CardTitle>
-                  <CardDescription>Structured weekly themes and activities</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">
-                  Access new educational themes, tasks, and materials every week, carefully designed for early childhood
-                  development.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Globe className="h-8 w-8 text-purple-600" />
-                <div className="grid gap-1">
-                  <CardTitle>Multi-language</CardTitle>
-                  <CardDescription>Content in multiple languages</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">
-                  All educational materials are available in multiple languages to support diverse linguistic needs
-                  across the world.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <BookOpen className="h-8 w-8 text-purple-600" />
-                <div className="grid gap-1">
-                  <CardTitle>E-learning Tools</CardTitle>
-                  <CardDescription>Modern teaching resources</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">
-                  Up-to-date e-learning tools and resources to enhance teaching methods and engage young learners
-                  effectively.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Users className="h-8 w-8 text-purple-600" />
-                <div className="grid gap-1">
-                  <CardTitle>School Management</CardTitle>
-                  <CardDescription>Easy registration and access</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">
-                  Simple registration process for schools with dedicated dashboards for teachers and administrators.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Settings className="h-8 w-8 text-purple-600" />
-                <div className="grid gap-1">
-                  <CardTitle>Customizable</CardTitle>
-                  <CardDescription>Adapt to your school's needs</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">
-                  Customize content based on cultural preferences, religious beliefs, and specific educational
-                  requirements.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Heart className="h-8 w-8 text-purple-600" />
-                <div className="grid gap-1">
-                  <CardTitle>Affordable</CardTitle>
-                  <CardDescription>Quality education for all</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">
-                  Flexible subscription model designed to be accessible for all schools, including those in less
-                  fortunate areas.
-                </p>
-              </CardContent>
-            </Card>
+            {features.map((feature, idx) => (
+              <Card key={feature.title}>
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <feature.icon className="h-8 w-8 text-purple-600" aria-label={feature.title} />
+                  <div className="grid gap-1">
+                    <CardTitle>{feature.title}</CardTitle>
+                    <CardDescription>{feature.description}</CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-500">{feature.details}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -198,312 +231,40 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 mt-12">
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle>Basic</CardTitle>
-                <CardDescription>For small nursery schools</CardDescription>
-                <div className="mt-4 text-4xl font-bold">
-                  $29<span className="text-sm font-normal text-gray-500">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Weekly educational content
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    2 language options
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Basic e-learning tools
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Up to 3 teacher accounts
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Get Started</Button>
-              </CardFooter>
-            </Card>
-            <Card className="border-2 border-purple-600">
-              <CardHeader>
-                <div className="px-4 py-1 text-xs font-bold bg-purple-100 text-purple-600 rounded-full w-fit mx-auto mb-4">
-                  MOST POPULAR
-                </div>
-                <CardTitle>Standard</CardTitle>
-                <CardDescription>For medium-sized nursery schools</CardDescription>
-                <div className="mt-4 text-4xl font-bold">
-                  $49<span className="text-sm font-normal text-gray-500">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Weekly educational content
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    All language options
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Advanced e-learning tools
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Up to 10 teacher accounts
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Cultural customization options
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Get Started</Button>
-              </CardFooter>
-            </Card>
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle>Premium</CardTitle>
-                <CardDescription>For larger nursery schools</CardDescription>
-                <div className="mt-4 text-4xl font-bold">
-                  $89<span className="text-sm font-normal text-gray-500">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Weekly educational content
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    All language options
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Premium e-learning tools
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Unlimited teacher accounts
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Full customization options
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4 text-green-500"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Priority support
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Get Started</Button>
-              </CardFooter>
-            </Card>
+            {pricing.map((plan) => (
+              <Card
+                key={plan.title}
+                className={`border-2 ${plan.highlight ? "border-purple-600" : ""}`}
+                aria-label={`${plan.title} plan`}
+              >
+                <CardHeader>
+                  {plan.highlight && (
+                    <div className="px-4 py-1 text-xs font-bold bg-purple-100 text-purple-600 rounded-full w-fit mx-auto mb-4">
+                      MOST POPULAR
+                    </div>
+                  )}
+                  <CardTitle>{plan.title}</CardTitle>
+                  <CardDescription>{plan.description}</CardDescription>
+                  <div className="mt-4 text-4xl font-bold">
+                    {plan.price}
+                    <span className="text-sm font-normal text-gray-500">/month</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2 text-sm">
+                    {plan.features.map((f) => (
+                      <li className="flex items-center" key={f}>
+                        <CheckIcon />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full bg-purple-600 hover:bg-purple-700">Get Started</Button>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
           <div className="mt-8 text-center text-sm text-gray-500">
             <p>
