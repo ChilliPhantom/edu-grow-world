@@ -1,10 +1,34 @@
 # edu-grow-world
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A modern educational dashboard for nurseries and schools, built with Next.js and Tailwind CSS.
+
+## Features
+
+- Weekly educational content and resources
+- Multi-language support
+- Downloadable materials
+- Subscription management
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org)
+- [React](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Radix UI](https://www.radix-ui.com/)
+- [Lucide Icons](https://lucide.dev/)
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+
+Run the development server:
 npm run dev
 # or
 yarn dev
@@ -17,6 +41,22 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Available Scripts
+
+- `npm run dev` – Start the development server
+- `npm run build` – Build for production
+- `npm run start` – Start the production server
+- `npm run lint` – Run ESLint
+
+## Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+
+## License
+
+[MIT](LICENSE)
 
 ## Learn More
 

@@ -88,4 +88,13 @@ module.exports = {
     // require("@tailwindcss/forms"),
     // require("@tailwindcss/typography"),
   ],
+  corePlugins: {
+    preflight: false,
+  },
+  css: {
+    body: {
+      fontFamily: "var(--font-sans, 'Inter', 'Segoe UI', Arial, sans-serif)",
+      backgroundColor: "#f7f9fb",
+    },
+  },
 }
