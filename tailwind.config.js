@@ -8,7 +8,6 @@ module.exports = {
     './src/**/*.{ts,tsx}',
   ],
   safelist: [
-    // Add dynamic classes here to prevent purging
     'bg-primary',
     'text-secondary',
   ],
@@ -25,7 +24,6 @@ module.exports = {
       },
     },
     extend: {
-      // Custom color palette using CSS variables for easy theming
       colors: {
         border: "var(--color-border)",
         input: "var(--color-input)",
@@ -78,23 +76,17 @@ module.exports = {
         xl: "var(--radius-xl)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
+        sans: ["var(--font-sans)", "Inter", "Segoe UI", "Arial", "sans-serif"],
         mono: ["var(--font-mono)"],
       },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
-    // require("@tailwindcss/forms"),
-    // require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
   ],
   corePlugins: {
-    preflight: false,
-  },
-  css: {
-    body: {
-      fontFamily: "var(--font-sans, 'Inter', 'Segoe UI', Arial, sans-serif)",
-      backgroundColor: "#f7f9fb",
-    },
+    preflight: true,
   },
 }

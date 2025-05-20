@@ -1,6 +1,7 @@
 /* === Tailwind and Animation Imports === */
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 /* === CSS Variables: Theme and Colors === */
 :root {
@@ -47,7 +48,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Font families */
-  --font-sans: var(--font-geist-sans, sans-serif);
+  --font-sans: 'Inter', 'Segoe UI', Arial, sans-serif;
   --font-mono: var(--font-geist-mono, monospace);
 
   /* Border radius sizes */
@@ -108,5 +109,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+    background-color: #f7f9fb;
+    color: #222;
   }
 }

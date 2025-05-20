@@ -17,6 +17,11 @@ A modern educational dashboard for nurseries and schools, built with Next.js and
 - [Radix UI](https://www.radix-ui.com/)
 - [Lucide Icons](https://lucide.dev/)
 
+## Screenshots
+
+![Landing Page](./public/screenshot-landing.png)
+![Dashboard](./public/screenshot-dashboard.png)
+
 ## Getting Started
 
 Install dependencies:

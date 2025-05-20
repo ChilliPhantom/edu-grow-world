@@ -110,7 +110,7 @@ const pricing = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-purple-50 to-white">
         <div className="container px-4 md:px-6">
@@ -127,15 +127,15 @@ export default function Home() {
                 Afrikaans, English, and Tswana.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-purple-600 hover:bg-purple-700">Get Started</Button>
-                <Button variant="outline">Learn More</Button>
+                <Button className="bg-purple-600 hover:bg-purple-700" aria-label="Get Started">Get Started</Button>
+                <Button variant="outline" aria-label="Learn More">Learn More</Button>
               </div>
             </div>
             <div className="mx-auto lg:ml-auto">
               <Image
                 alt="Children learning"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-                src="/placeholder.svg"
+                src="/your-real-image.jpg" // <-- Use a real image here
                 width={800}
                 height={550}
                 priority
